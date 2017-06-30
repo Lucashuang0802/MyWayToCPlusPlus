@@ -1,3 +1,5 @@
 language: objective-c
 osx_image: xcode8
+before_install:
+ - chmod +x compile.sh
 script: ./compile.sh 
