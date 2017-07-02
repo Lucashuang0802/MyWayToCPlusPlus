@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <fstream>
 
@@ -13,6 +11,25 @@ void writeFile() {
   myfile.close();
 }
 
+
+void readFileInChar() {
+  char c;
+  ifstream myfile ("example.txt");
+  if (myfile.is_open()) {
+    while (myfile.get(c)) {
+      if (c == '\n') {
+        cout << "\n";
+      }
+      else {
+        cout << c << ", ";
+      }
+    }
+    myfile.close();
+  }
+  else {
+    cout << "Unable to open file";
+  }
+}
 
 void readFile() {
   string line;
@@ -29,8 +46,8 @@ void readFile() {
 }
 
 int main() {
-  
-  writeFile();
+  writeFile(); 
   readFile();  
+  readFileInChar();
   return 0;
 }
